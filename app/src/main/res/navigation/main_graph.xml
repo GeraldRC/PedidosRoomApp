@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/pedidoFragmentOptions">
+
+    <fragment
+        android:id="@+id/pedidoFragmentOptions"
+        android:name="com.example.pedidoroomapp.ui.options.PedidoFragmentOptions"
+        android:label="fragment_pedido_options"
+        tools:layout="@layout/fragment_pedido_options" >
+        <action
+            android:id="@+id/action_pedidoFragmentOptions_to_pedidoFragment"
+            app:destination="@id/pedidoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_pedidoFragmentOptions_to_pedidoFragmentCreate"
+            app:destination="@id/pedidoFragmentCreate"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_pedidoFragmentOptions_to_pedidoSearchFragment"
+            app:destination="@id/pedidoSearchFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/pedidoFragmentCreate"
+        android:name="com.example.pedidoroomapp.ui.create.PedidoFragmentCreate"
+        android:label="fragment_pedido_create"
+        tools:layout="@layout/fragment_pedido_create" >
+        <action
+            android:id="@+id/action_pedidoFragmentCreate_to_pedidoFragmentOptions"
+            app:destination="@id/pedidoFragmentOptions" />
+    </fragment>
+    <fragment
+        android:id="@+id/pedidoFragment"
+        android:name="com.example.pedidoroomapp.ui.main.PedidoFragment"
+        android:label="fragment_pedido"
+        tools:layout="@layout/fragment_pedido" >
+        <action
+            android:id="@+id/action_pedidoFragment_to_pedidoFragmentDetails"
+            app:destination="@id/pedidoFragmentDetails"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/pedidoFragmentDetails"
+        android:name="com.example.pedidoroomapp.ui.detail.PedidoFragmentDetails"
+        android:label="fragment_pedido_details"
+        tools:layout="@layout/fragment_pedido_details" >
+        <argument
+            android:name="pedido"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_pedidoFragmentDetails_to_pedidoFragment"
+            app:destination="@id/pedidoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pedidoSearchFragment"
+        android:name="com.example.pedidoroomapp.ui.search.PedidoSearchFragment"
+        android:label="fragment_pedido_search"
+        tools:layout="@layout/fragment_pedido_search" >
+        <action
+            android:id="@+id/action_pedidoSearchFragment_to_pedidoFragmentDetails"
+            app:destination="@id/pedidoFragmentDetails" />
+    </fragment>
+</navigation>

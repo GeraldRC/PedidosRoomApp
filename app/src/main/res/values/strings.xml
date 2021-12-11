@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PedidoRoomApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ingresar_pedido">Ingresar Pedido</string>
+    <string name="ingrese_cantdad_de_articulos">Ingrese Cantdad de Articulos</string>
+    <string name="ingrese_numero_de_pedido">Ingrese Numero de pedido</string>
+    <string name="ingrese_detalle">ingrese detalle</string>
+    <string name="ingrese_n_pedido">Ingrese N° Pedido</string>
+    <string name="add_ped">addPed</string>
+</resources>

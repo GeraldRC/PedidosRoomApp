@@ -9,24 +9,38 @@
 
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/rv_ped"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
-        <TextView
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_detail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_cant_ped"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textSize="25sp"
-            tools:text="5"/>
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:hint="@string/buscar">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txt_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="3"
+            android:textSize="11sp"
+            android:text="@string/search"/>
 
     </LinearLayout>
 
@@ -34,6 +48,7 @@
         android:id="@+id/rv_ped"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_margin="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

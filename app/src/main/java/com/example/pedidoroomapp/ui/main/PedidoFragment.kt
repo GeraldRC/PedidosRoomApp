@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,10 +19,10 @@ import com.example.pedidoroomapp.presentation.PedidoViewModelFactory
 import com.example.pedidoroomapp.ui.main.adapter.PedidoAdapter
 
 
-class PedidoFragment : Fragment(R.layout.fragment_pedido), PedidoAdapter.OnPedidoClickListener{
+class PedidoFragment : Fragment(R.layout.fragment_pedido), PedidoAdapter.OnPedidoClickListener {
 
     private lateinit var binding: FragmentPedidoBinding
-    private lateinit var recyclerView : RecyclerView
+    private lateinit var recyclerView: RecyclerView
 
     private val viewModel by viewModels<PedidoViewModel> {
         PedidoViewModelFactory(
@@ -38,13 +39,34 @@ class PedidoFragment : Fragment(R.layout.fragment_pedido), PedidoAdapter.OnPedid
         recyclerView = binding.rvPed
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         loadingPed()
+        binding.btnSearch.setOnClickListener {
+            getPedido()
+        }
 
     }
 
-    private  fun loadingPed(){
+    private fun loadingPed() {
         viewModel.allPedido.observe(viewLifecycleOwner) { pedidos ->
-            binding.txtCantPed.text =  pedidos.size.toString()
             recyclerView.adapter = PedidoAdapter(pedidos, this@PedidoFragment)
+        }
+    }
+
+    private fun getPedido() {
+        val ped = binding.txtSearch.text.toString()
+        if (ped.trim().isEmpty()) {
+            loadingPed()
+        } else {
+            viewModel.getPedido(ped.toInt()).observe(viewLifecycleOwner) {
+                if (it.isEmpty()) {
+                    Toast.makeText(
+                        requireContext(),
+                        "Pedido: $ped no Encontrado",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    recyclerView.adapter = PedidoAdapter(it, this@PedidoFragment)
+                }
+            }
         }
     }
 

@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 interface PedidoDao {
 
     @Transaction
-    @Query("SELECT  * FROM PedidoEntity ORDER BY id DESC Limit 100")
+    @Query("SELECT  * FROM PedidoEntity ORDER BY id DESC")
     fun getAll(): Flow<List<PedidoWithImage>>
 
     @Transaction

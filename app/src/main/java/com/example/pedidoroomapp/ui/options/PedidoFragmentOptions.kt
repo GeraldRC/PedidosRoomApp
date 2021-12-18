@@ -22,7 +22,6 @@ class PedidoFragmentOptions : Fragment(R.layout.fragment_pedido_options) {
     }
 
 
-
     private fun clickListeners(){
         binding.btnIngPed.setOnClickListener {
             findNavController().navigate(R.id.action_pedidoFragmentOptions_to_pedidoFragmentCreate)
@@ -32,8 +31,5 @@ class PedidoFragmentOptions : Fragment(R.layout.fragment_pedido_options) {
             findNavController().navigate(R.id.action_pedidoFragmentOptions_to_pedidoFragment)
         }
 
-        binding.txtOptSearch.setOnClickListener {
-            findNavController().navigate(R.id.action_pedidoFragmentOptions_to_pedidoSearchFragment)
-        }
     }
 }

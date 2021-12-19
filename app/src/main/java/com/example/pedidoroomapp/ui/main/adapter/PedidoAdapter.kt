@@ -3,10 +3,12 @@ package com.example.pedidoroomapp.ui.main.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pedidoroomapp.core.BaseViewHolder
 import com.example.pedidoroomapp.data.model.PedidoWithImage
+import com.example.pedidoroomapp.databinding.ItemNewPedidoBinding
 import com.example.pedidoroomapp.databinding.PedidoItemBinding
 
 
@@ -21,7 +23,7 @@ class PedidoAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
         val itemBinding =
-            PedidoItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemNewPedidoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         val holder = PedidoViewHolder(itemBinding, parent.context)
 
         itemBinding.root.setOnClickListener {
@@ -44,13 +46,12 @@ class PedidoAdapter(
     override fun getItemCount(): Int = pedidosList.size
 
 
-    private inner class PedidoViewHolder(val binding: PedidoItemBinding, val context: Context) :
+    private inner class PedidoViewHolder(val binding: ItemNewPedidoBinding, val context: Context) :
         BaseViewHolder<PedidoWithImage>(binding.root) {
         override fun render(item: PedidoWithImage) {
-            binding.txtDatePed.text = item.pedidoEntity.date
-            binding.txtNumPed.text = item.pedidoEntity.numPed.toString()
+            binding.txtPed.text = "Pedido: ${item.pedidoEntity.numPed}"
+            binding.txtFecha.text= "Fecha: ${item.pedidoEntity.date}"
         }
-
     }
 
 }

@@ -20,11 +20,12 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_ped"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginBottom="2dp"
             android:hint="@string/ingrese_n_pedido">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -36,11 +37,12 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_art"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginBottom="2dp"
             android:hint="Ingrese Cantidad de Articulos">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -52,11 +54,12 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_artEnt"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginBottom="2dp"
             android:hint="Articulos entregados">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -68,7 +71,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_detail"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

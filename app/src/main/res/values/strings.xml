@@ -10,4 +10,5 @@
     <string name="add_ped">addPed</string>
     <string name="search">Search</string>
     <string name="buscar">Buscar</string>
+    <string name="dificultad">Dificultad</string>
 </resources>

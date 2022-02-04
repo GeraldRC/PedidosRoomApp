@@ -58,17 +58,15 @@ class PedidoFragmentCreate : Fragment(R.layout.fragment_pedido_create) {
             }
         }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding = FragmentPedidoCreateBinding.bind(view)
         setClickListeners()
 
     }
 
     private fun subirPedido() {
-        val numPed = binding.txtPed.text.toString()
+        val numPed = binding.txtNumped.text.toString()
         val canArt = binding.txtArt.text.toString()
         val canArtEnt = binding.txtArtEnt.text.toString()
         val detail = binding.txtDetail.text.toString()
@@ -103,13 +101,13 @@ class PedidoFragmentCreate : Fragment(R.layout.fragment_pedido_create) {
         }
     }
     private fun setClickListeners() {
-        binding.btnTakePhoto.setOnClickListener {
-            val numPed = binding.txtPed.text.toString()
+        binding.ivPhoto.setOnClickListener {
+            val numPed = binding.txtNumped.text.toString()
             if (!checkNumPed()) {
                 takePhoto(numPed.toInt())
             }
         }
-        binding.fabAddPed.setOnClickListener {
+        binding.floatingActionButton.setOnClickListener {
             subirPedido()
         }
 
@@ -117,12 +115,12 @@ class PedidoFragmentCreate : Fragment(R.layout.fragment_pedido_create) {
 
     private fun checkNumPed(): Boolean {
         var check = false
-        val numPed = binding.txtPed.text.toString()
+        val numPed = binding.txtNumped.text.toString()
         if (numPed.trim().isEmpty()) {
-            binding.inputPed.error = "Ingrese Numero de Pedido"
+            binding.inputNumPed.error = "Ingrese Numero de Pedido"
             check = true
         }else{
-            binding.inputPed.error = null
+            binding.inputNumPed.error = null
         }
         return check
     }
@@ -177,9 +175,9 @@ class PedidoFragmentCreate : Fragment(R.layout.fragment_pedido_create) {
         var cont = 0
 
         if (numped.trim().isEmpty()) {
-            binding.inputPed.error = "Ingrese Numero Pedido"
+            binding.inputNumPed.error = "Ingrese Numero Pedido"
         } else {
-            binding.inputPed.error = null
+            binding.inputNumPed.error = null
             cont += 1
         }
 

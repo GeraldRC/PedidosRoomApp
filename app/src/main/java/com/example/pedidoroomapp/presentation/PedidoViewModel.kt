@@ -16,9 +16,8 @@ class PedidoViewModel(private val repo: PedidoRepository): ViewModel() {
     }
 
 }
-
-class PedidoViewModelFactory(private val repo: PedidoRepository): ViewModelProvider.Factory{
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+ class PedidoViewModelFactory(private val repo: PedidoRepository): ViewModelProvider.Factory{
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return  modelClass.getConstructor(PedidoRepository::class.java).newInstance(repo)
     }
 }

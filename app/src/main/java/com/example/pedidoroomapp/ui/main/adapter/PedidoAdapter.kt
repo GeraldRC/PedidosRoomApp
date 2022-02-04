@@ -1,5 +1,6 @@
 package com.example.pedidoroomapp.ui.main.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pedidoroomapp.core.BaseViewHolder
 import com.example.pedidoroomapp.data.model.PedidoWithImage
 import com.example.pedidoroomapp.databinding.ItemNewPedidoBinding
-import com.example.pedidoroomapp.databinding.PedidoItemBinding
 
 
 class PedidoAdapter(
@@ -47,7 +47,8 @@ class PedidoAdapter(
 
 
     private inner class PedidoViewHolder(val binding: ItemNewPedidoBinding, val context: Context) :
-        BaseViewHolder<PedidoWithImage>(binding.root) {
+        BaseViewHolder<PedidoWithImage>(binding.root){
+        @SuppressLint("SetTextI18n")
         override fun render(item: PedidoWithImage) {
             binding.txtPed.text = "Pedido: ${item.pedidoEntity.numPed}"
             binding.txtFecha.text= "Fecha: ${item.pedidoEntity.date}"

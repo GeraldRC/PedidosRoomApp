@@ -6,8 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.pedidoroomapp.data.model.Image
 import com.example.pedidoroomapp.data.model.PedidoEntity
+import com.example.pedidoroomapp.data.model.User
 
-@Database(entities = [PedidoEntity::class,Image::class], version = 1, exportSchema = false)
+@Database(entities = [PedidoEntity::class,Image::class, User::class], version = 1, exportSchema = false)
 abstract class AppDataBase : RoomDatabase() {
 
     abstract fun pedidoDao(): PedidoDao

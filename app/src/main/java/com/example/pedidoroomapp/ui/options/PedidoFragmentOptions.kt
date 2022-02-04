@@ -23,11 +23,11 @@ class PedidoFragmentOptions : Fragment(R.layout.fragment_pedido_options) {
 
 
     private fun clickListeners(){
-        binding.btnIngPed.setOnClickListener {
+        binding.optCreate.setOnClickListener {
             findNavController().navigate(R.id.action_pedidoFragmentOptions_to_pedidoFragmentCreate)
         }
 
-        binding.txtOptPed.setOnClickListener {
+        binding.optPedidos.setOnClickListener {
             findNavController().navigate(R.id.action_pedidoFragmentOptions_to_pedidoFragment)
         }
 
